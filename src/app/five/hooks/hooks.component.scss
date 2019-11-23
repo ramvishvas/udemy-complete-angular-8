@@ -1,0 +1,18 @@
+:host {
+    .hooks {
+
+        display: grid;
+        grid-template-columns: 196px 1fr;
+        align-items: center;
+        grid-column-gap: 16px;
+        margin-bottom: 8px;
+
+        .cycle {
+            background-color: darkslategray;
+            color: #ffffff;
+            padding: 6px 12px;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+}

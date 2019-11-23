@@ -1,0 +1,22 @@
+:host {
+    .basic {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 16px;
+        text-align: center;
+        margin-bottom: 16px;
+
+        .tl {
+            border: 1px solid red;
+            background-color: red;
+            color: #fff;
+            font-size: 18px;
+            padding: 8px 0;
+        }
+
+        .cards {
+            padding: 8px;
+            border: 1px solid #888;
+        }
+    }
+}

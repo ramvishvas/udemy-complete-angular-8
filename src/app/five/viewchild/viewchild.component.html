@@ -1,0 +1,59 @@
+<h4>@ViewChild() in Angular 8</h4>
+<hr>
+<pre>
+<textarea disabled="true" style="border: none; background-color:white; width: 100%; height: 280px;">
+    In Angular 8, the @ViewChild() syntax which you'll see in the next lecture needs to be changed slightly:
+
+    Instead of:
+    @ViewChild('serverContentInput') serverContentInput: ElementRef;
+
+    USE
+    @ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
+
+    The same change (add { static: true } as a second argument) needs to be applied to ALL usages of @ViewChild() 
+    (and also @ContentChild() which you'll learn about later) IF you plan on accessing the selected element inside of ngOnInit().
+
+    If you DON'T access the selected element in ngOnInit (but anywhere else in your component),  set static: false instead!
+
+    This is a temporary adjustment which will NOT be required anymore once Angular 9 is released!
+</textarea>
+</pre>
+
+<br>
+<h3>Using Local Html References in Typescript</h3>
+<hr>
+<br>
+<div class="input-group input-group-lg">
+    <span class="input-group-addon">@</span>
+    <input type="text" class="form-control" placeholder="Username" #referMeplease>
+</div>
+<br>
+<div class="input-group input-group-lg">
+    <button class="btn btn-primary btn-lg" (click)="onBtnClick(referMeplease)">
+        Refer Me Btn
+    </button>
+</div>
+<br>
+<div *ngIf="referMeElement">
+    <b>Refered Element: </b> {{referMeElement}}
+</div>
+<br>
+<pre>
+    <textarea disabled="true" 
+        style="padding: 20px 0; border: none;background-color:white;width: 95%; height: 320px;">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Username" #referMeplease>
+        </div>
+    
+        <div class="input-group input-group-lg" style="margin-top: 10px;">
+            <button class="btn btn-primary btn-lg" (click)="onBtnClick()">
+                Refer Me Btn
+            </button>
+        </div>
+    
+        <div style="margin-top: 10px;" *ngIf="referMeElement">
+            <b>Refered Element: </b> {{referMeElement}}
+        </div>
+    </textarea>
+</pre>

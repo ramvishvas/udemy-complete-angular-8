@@ -1,0 +1,15 @@
+:host {
+    display: grid;
+    grid-template-columns: 135px 1fr;
+    overflow: hidden;
+
+    .menu {
+        background: #efefef;
+        padding: 16px;
+    }
+
+    .main {
+        padding: 8px;
+        padding-top: 0;
+    }
+}
